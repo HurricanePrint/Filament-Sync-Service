@@ -8,11 +8,10 @@ mkdir -p data
 
 #install and enable startup service
 echo "Installing and enabling service"
-cp ${servicedirectory}/S56filamentsync /etc/init.d/
-chmod +x /etc/init.d/S56filamentsync
 chmod +x ${servicedirectory}/sync.sh
-# systemctl enable filamentsync
+systemctl enable ${servicedirectory}/filamentsync.service
 systemctl start filamentsync
+systemctl status filamentsync
 
 echo "Ready to sync"
 echo "Make sure the script is set in your slicers post-processing options"
