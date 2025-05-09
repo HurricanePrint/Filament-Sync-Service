@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# Filament Sync Service
+#
+
+PID_FILE=/var/run/filamentsync.pid
+
+start() {
+      sh /root/Filament-Sync-Service/service/sync.sh k1
+}
+stop() {
+        
+}
+restart() {
+
+}
+
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart|reload)
+        restart
+        ;;
+  *)
+        echo "Usage: $0 {start}"
+        exit 1
+esac
+
+exit $?

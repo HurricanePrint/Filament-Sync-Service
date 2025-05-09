@@ -5,36 +5,13 @@ This is the printer service that syncs custom profiles with the printer database
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P11AL9ZR)
 
+## Dependencies 
+
+For K2 printers: [k2-improvements](https://github.com/jamincollins/k2-improvements)
+
+For K1 printers: [Creality-Helper-Script](https://guilouz.github.io/Creality-Helper-Script-Wiki/helper-script/helper-script-installation/)
 
 ## Installation
-
-Git is already installed if you are using @jamincollins k2-improvements
-
-### If git is not installed on printer
-
-Download the [Latest Release](https://github.com/HurricanePrint/Filament-Sync-Service/releases/latest)
-
-Extract and place the Filament-Sync-Service folder on a FAT32 formatted USB drive
-
-Plug it into the printer
-
-In Terminal
-
-```
-ssh root@your-printer-ip
-```
-```
-cp -R /mnt/exUDISK/Filament-Sync-Service $HOME/
-```
-```
-cd Filament-Sync-Service
-```
-
-```
-sh install.sh
-```
-
-### If git is installed
 
 In Terminal
 
@@ -46,28 +23,22 @@ git clone https://github.com/HurricanePrint/Filament-Sync-Service.git
 cd Filament-Sync-Service
 ```
 
+For K2 users
+
 ```
 sh install.sh
+```
+
+For K1 users
+
+```
+sh k1install.sh
 ```
 
 #### All done! Continue to install Filament-Sync on your pc
 [Filament-Sync](https://github.com/HurricanePrint/Filament-Sync)
 
 ## Updating
-
-### Without git
-
-Delete the old folder
-
-Connect with ssh
-
-```
-rm -rf Filament-Sync-Service/
-```
-
-Continue with install instructions
-
-### With git
 
 Connect with ssh
 
@@ -83,8 +54,15 @@ git fetch --all
 git reset --hard origin/main 
 ```
 
+For K2
 ```
 sh install.sh
+```
+
+For K1
+
+```
+sh k1install.sh
 ```
 
 #### All done! Continue to install Filament-Sync on your pc
