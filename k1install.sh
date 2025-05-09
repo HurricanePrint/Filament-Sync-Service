@@ -1,6 +1,5 @@
 #! /bin/sh
 servicedirectory="./service"
-crealitydirectory="/mnt/UDISK/creality/userdata/box"
 
 # Create data folder if it doesn't exist
 echo "Creating data directory"
