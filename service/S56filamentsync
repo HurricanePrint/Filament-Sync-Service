@@ -3,7 +3,7 @@
 # Filament Sync Service
 #
 
-PID_FILE=/var/run/filamentsync.pid
+PIDFILE=/var/run/filamentsync.pid
 
 start() {
       echo "Starting Filament-Sync-Service"
@@ -12,7 +12,7 @@ start() {
 }
 stop() {
       echo "Stopping Filament-Sync-Service"
-      start-stop-daemon -K -q -p $PID_FILE
+      start-stop-daemon -K -q -p $PIDFILE
 }
 restart() {
       stop
@@ -21,18 +21,18 @@ restart() {
 }
 
 case "$1" in
-  start)
-        start
-        ;;
-  stop)
-        stop
-        ;;
-  restart|reload)
-        restart
-        ;;
-  *)
-        echo "Usage: $0 {start|stop|restart}"
-        exit 1
+      start)
+            start
+            ;;
+      stop)
+            stop
+            ;;
+      restart|reload)
+            restart
+            ;;
+      *)
+            echo "Usage: $0 {start|stop|restart}"
+            exit 1
 esac
 
-exit $?
+exit 0
