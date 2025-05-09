@@ -1,11 +1,11 @@
 #!/bin/sh
 
-SYNCDIRECTORY="/mnt/UDISK/root/Filament-Sync-Service/data" 
-
 if [ "$1" == "k1" ]; then
-    CREALITYDIRECTORY="/mnt/UDISK/creality/userdata/box"
+    CREALITYDIRECTORY="/usr/data/creality/userdata/box/"
+    SYNCDIRECTORY="/root/Filament-Sync-Service/data" 
 else
     CREALITYDIRECTORY="/mnt/UDISK/creality/userdata/box"
+    SYNCDIRECTORY="/mnt/UDISK/root/Filament-Sync-Service/data" 
 fi
 
 while :
