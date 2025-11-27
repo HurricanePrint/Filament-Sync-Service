@@ -1,7 +1,11 @@
 #! /bin/sh
 servicedirectory="./service"
 
-# Create data folder if it doesn't exist
+# Install SFTP
+echo "Installing SFTP"
+opkg install ${servicedirectory}/openssh-sftp-server_10.0_p1-1_armv7-3.2.ipk
+
+# Create data folder
 echo "Creating data directory"
 mkdir -p data
 
@@ -15,4 +19,4 @@ chmod +x ${servicedirectory}/sync.sh
 
 echo "Ready to sync"
 echo "Make sure the script is set in your slicers post-processing options"
-echo "or in terminal run node main.js in the filament-sync directory"
+echo "or in terminal run 'node main.js' in the filament-sync directory"
