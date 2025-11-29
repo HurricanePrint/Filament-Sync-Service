@@ -9,7 +9,7 @@ Not working with K1 series printers at the moment. If you have experience with c
 
 ## Installation
 
-Download and unzip the latest release
+Download and unzip the [Latest Release](https://github.com/HurricanePrint/Filament-Sync-Service/releases/latest)
 
 Open Fluidd in your browser ```<your.printer.ip>:4408```
 
