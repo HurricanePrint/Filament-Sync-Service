@@ -24,7 +24,11 @@ Select the Filament-Sync-Service folder you extracted
 Connect to your printer with ssh ```root@<your.printer.ip>```
 password ```creality_2024```
 
-then run
+If you are not using the k2improvement-script you will need to install entware
+```
+sh /mnt/UDISK/printer_data/config/Filament-Sync-Service/service/entware/install.sh
+```
+Install the sync service
 ```
 sh /mnt/UDISK/printer_data/config/Filament-Sync-Service/install.sh
 ```
