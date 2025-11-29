@@ -1,11 +1,6 @@
 #!/bin/sh
 
-if test -f "/root/Filament-Sync-Service/service/sync.sh"; then
-    SYNCDIRECTORY="/root/Filament-Sync-Service/data"
-else
-    SYNCDIRECTORY="/mnt/UDISK/root/Filament-Sync-Service/data" 
-fi
-
+SYNCDIRECTORY="/mnt/UDISK/printer_data/config/Filament-Sync-Service/data" 
 CREALITYDIRECTORY="/mnt/UDISK/creality/userdata/box"
 
 while :
