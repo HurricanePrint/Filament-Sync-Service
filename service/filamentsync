@@ -4,11 +4,7 @@ START=95
 USE_PROCD=1
 
 start_service() {
-        if test -f "/root/Filament-Sync-Service/service/sync.sh"; then
-        SYNCSCRIPT="/root/Filament-Sync-Service/service/sync.sh"
-        else
-        SYNCSCRIPT="/mnt/UDISK/root/Filament-Sync-Service/service/sync.sh" 
-        fi
+        SYNCSCRIPT="/mnt/UDISK/printer_data/config/Filament-Sync-Service/data" 
         procd_open_instance
         procd_set_param command sh ${SYNCSCRIPT}
         procd_set_param respawn  # respawn the service if it exits
