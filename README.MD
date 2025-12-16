@@ -32,6 +32,10 @@ Install the sync service
 ```
 sh /mnt/UDISK/printer_data/config/Filament-Sync-Service/install.sh
 ```
+If you have the k2improvement-script installed, the path is
+```
+/mnt/UDISK/root/printer_data/config/Filament-Sync-Service
+```
 
 #### All done! Continue to install Filament-Sync on your pc
 ### [Filament-Sync](https://github.com/HurricanePrint/Filament-Sync)
