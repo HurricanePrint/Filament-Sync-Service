@@ -13,6 +13,9 @@ if test -f "/etc/init.d/filamentsync"; then
     rm /etc/init.d/filamentsync
 fi
 
+#create data dir
+mkdir -p data
+
 #install and enable startup service
 if test -f "/mnt/UDISK/root/printer_data/config/Filament-Sync-Service/service/sync.sh"; then
     SERVICEDIRECTORY="/mnt/UDISK/root/printer_data/config/Filament-Sync-Service/service"
