@@ -24,8 +24,6 @@ if test -f "/mnt/UDISK/root/printer_data/config/Filament-Sync-Service/service/sy
     chmod +x /etc/init.d/filamentsyncimprovement
     /etc/init.d/filamentsyncimprovement enable
     /etc/init.d/filamentsyncimprovement start
-    echo "Installing SFTP"
-    opkg install openssh-sftp-server
 else
     SERVICEDIRECTORY="/mnt/UDISK/printer_data/config/Filament-Sync-Service/service"
     cp ${SERVICEDIRECTORY}/filamentsync /etc/init.d/
