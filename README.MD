@@ -34,7 +34,7 @@ sh /mnt/UDISK/printer_data/config/Filament-Sync-Service/install.sh
 ```
 If you have the k2improvement-script installed, the path is
 ```
-/mnt/UDISK/root/printer_data/config/Filament-Sync-Service
+sh /mnt/UDISK/root/printer_data/config/Filament-Sync-Service/install.sh
 ```
 
 #### All done! Continue to install Filament-Sync on your pc

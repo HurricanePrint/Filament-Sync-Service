@@ -1,21 +1,38 @@
 #! /bin/sh
-servicedirectory="./service"
 
-# Install SFTP
-echo "Installing SFTP"
-opkg install ${servicedirectory}/openssh-sftp-server_10.0_p1-1_armv7-3.2.ipk
+#stop and remove service if previous version exists
+if test -f "/etc/init.d/filamentsyncimprovement"; then
+    /etc/init.d/filamentsyncimprovement disable
+    /etc/init.d/filamentsyncimprovement stop
+    rm /etc/init.d/filamentsyncimprovement
+fi
 
-# Create data folder
-echo "Creating data directory"
-mkdir -p data
+if test -f "/etc/init.d/filamentsync"; then
+    /etc/init.d/filamentsync disable
+    /etc/init.d/filamentsync stop
+    rm /etc/init.d/filamentsync
+fi
 
 #install and enable startup service
-echo "Installing and enabling service"
-cp ${servicedirectory}/filamentsync /etc/init.d/
-chmod +x /etc/init.d/filamentsync
-chmod +x ${servicedirectory}/sync.sh
-/etc/init.d/filamentsync enable
-/etc/init.d/filamentsync start
+if test -f "/mnt/UDISK/root/printer_data/config/Filament-Sync-Service/service/sync.sh"; then
+    SERVICEDIRECTORY="/mnt/UDISK/root/printer_data/config/Filament-Sync-Service/service"
+    cp ${SERVICEDIRECTORY}/filamentsyncimprovement /etc/init.d/
+    chmod +x ${SERVICEDIRECTORY}/sync.sh
+    chmod +x /etc/init.d/filamentsyncimprovement
+    /etc/init.d/filamentsyncimprovement enable
+    /etc/init.d/filamentsyncimprovement start
+    echo "Installing SFTP"
+    opkg install openssh-sftp-server
+else
+    SERVICEDIRECTORY="/mnt/UDISK/printer_data/config/Filament-Sync-Service/service"
+    cp ${SERVICEDIRECTORY}/filamentsync /etc/init.d/
+    chmod +x ${SERVICEDIRECTORY}/sync.sh
+    chmod +x /etc/init.d/filamentsync
+    /etc/init.d/filamentsync enable
+    /etc/init.d/filamentsync start
+    echo "Installing SFTP"
+    opkg install ${SERVICEDIRECTORY}/openssh-sftp-server_10.0_p1-1_armv7-3.2.ipk
+fi
 
 echo "Ready to sync"
 echo "Make sure the script is set in your slicers post-processing options"
