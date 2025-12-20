@@ -26,7 +26,10 @@ password ```creality_2024```
 
 Install the sync service
 ```
-sh /mnt/UDISK/printer_data/config/Filament-Sync-Service/install.sh
+cd /mnt/UDISK/printer_data/config/Filament-Sync-Service/
+```
+```
+sh /install.sh
 ```
 
 
@@ -35,4 +38,4 @@ sh /mnt/UDISK/printer_data/config/Filament-Sync-Service/install.sh
 
 ## Updating
 
-Delete the previous folder from your printer and upload the newest version the same way you do in the Installing section. No need to run install.sh if it's already been installed previously.
+Moonraker now handles checking for and downloading updates. If there is an update there will be a notification in Fluidd.
