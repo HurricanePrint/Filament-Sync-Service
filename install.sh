@@ -26,3 +26,28 @@ chmod +x /etc/init.d/filamentsync
 /etc/init.d/filamentsync enable
 /etc/init.d/filamentsync start
 echo "Service is" `/etc/init.d/filamentsync status`
+
+#add to moonraker to handle updates 
+SERVICEFILE="/mnt/UDISK/printer_data/moonraker.asvc"
+SERVICELINE="filamentsync"
+
+grep -qFx "$SERVICELINE" "$SERVICEFILE" || echo "$SERVICELINE" >> "$SERVICEFILE"
+
+CONFFILE="/mnt/UDISK/printer_data/config/moonraker.conf"
+CONFBLOCK="[update_manager filamentsync]"
+
+if ! grep -qF "$CONFBLOCK" "$CONFFILE"; then
+    cat <<EOF >> "$CONFFILE"
+
+[update_manager filamentsync]
+type: git_repo
+path: /mnt/UDISK/printer_data/config/Filament-Sync-Service
+origin: github.com/HurricanePrint/Filament-Sync-Service.git
+primary_branch: main
+managed_services: filamentsync
+EOF
+    echo "Block added to $CONFFILE."
+else
+    echo "Configuration already exists in $CONFFILE. No changes made."
+fi
+systemctl restart moonraker
