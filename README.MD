@@ -34,7 +34,7 @@ sh /install.sh
 
 If you installed manually you may need to repair the repo before Fluidd will show if there are updates
 
-Go into Fluidd Settings, scroll all the way to the bottom **Software Updates** section and click **Repair**
+Go into Fluidd Settings, scroll all the way to the bottom **Software Updates** section and click **Recover**
 
 
 #### All done! Continue to install Filament-Sync on your pc
