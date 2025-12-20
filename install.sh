@@ -32,7 +32,7 @@ echo "Service is" `/etc/init.d/filamentsync status`
 SERVICEFILE="/mnt/UDISK/printer_data/moonraker.asvc"
 SERVICELINE="filamentsync"
 
-grep -qFx "$SERVICELINE" "$SERVICEFILE" || echo "$SERVICELINE" >> "$SERVICEFILE"
+grep -qFx "$SERVICELINE" "$SERVICEFILE" || echo -e "$SERVICELINE" >> "$SERVICEFILE"
 
 CONFFILE="/mnt/UDISK/printer_data/config/moonraker.conf"
 CONFBLOCK="[update_manager filamentsync]"
