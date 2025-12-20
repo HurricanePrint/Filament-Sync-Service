@@ -51,4 +51,4 @@ EOF
 else
     echo "Configuration already exists in $CONFFILE. No changes made."
 fi
-systemctl restart moonraker
+/etc/init.d/moonraker restart
