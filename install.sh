@@ -28,6 +28,7 @@ chmod +x /etc/init.d/filamentsync
 echo "Service is" `/etc/init.d/filamentsync status`
 
 #add to moonraker to handle updates 
+[ ! -d .git ] && [ -d git ] && mv git .git
 SERVICEFILE="/mnt/UDISK/printer_data/moonraker.asvc"
 SERVICELINE="filamentsync"
 
@@ -42,7 +43,7 @@ if ! grep -qF "$CONFBLOCK" "$CONFFILE"; then
 [update_manager filamentsync]
 type: git_repo
 path: /mnt/UDISK/printer_data/config/Filament-Sync-Service
-origin: github.com/HurricanePrint/Filament-Sync-Service.git
+origin: https://github.com/HurricanePrint/Filament-Sync-Service.git
 primary_branch: main
 managed_services: filamentsync
 EOF
