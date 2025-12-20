@@ -32,6 +32,10 @@ cd /mnt/UDISK/printer_data/config/Filament-Sync-Service/
 sh /install.sh
 ```
 
+If you installed manually you may need to repair the repo before Fluidd will show if there are updates
+
+Go into Fluidd Settings, scroll all the way to the bottom **Software Updates** section and click **Repair**
+
 
 #### All done! Continue to install Filament-Sync on your pc
 ### [Filament-Sync](https://github.com/HurricanePrint/Filament-Sync)
