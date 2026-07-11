@@ -9,6 +9,12 @@ Not working with K1 series printers at the moment. If you have experience with c
 
 ## Installation
 
+### The service daemon is now automatically installed when running the main tool, follow the instructions for [Filament-Sync](https://github.com/HurricanePrint/Filament-Sync)
+
+---
+
+### The following instructions are now only needed for manual installation if you have errors with the automatic installation
+
 Download and unzip the [Latest Release](https://github.com/HurricanePrint/Filament-Sync-Service/releases/latest)
 
 Open Fluidd in your browser ```<your.printer.ip>:4408```
