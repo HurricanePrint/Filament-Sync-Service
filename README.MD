@@ -2,7 +2,7 @@
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P11AL9ZR)
 
-Filament Sync Service is a background utility for Creality OS printers. It automatically restores your custom filament profiles and database elements, preventing the printer from overwriting them with factory defaults upon reboot.
+Filament-Sync-Service is the background service for Filament-Sync. If you are looking for the main tool application, visit [Filament-Sync](https://github.com/HurricanePrint/Filament-Sync). This service automatically restores your custom filament profiles and database elements, preventing the printer from overwriting them with factory defaults upon reboot.
 
 ---
 
