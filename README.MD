@@ -1,51 +1,86 @@
+# Filament Sync Service
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P11AL9ZR)
 
-# Filament Sync Service
-This is the printer service that syncs custom profiles with the printer database. Since Creality replaces the database with defaults on boot, this service will automatically restore your custom database when you power up the printer.
-
-### Note to K1 users
-
-Not working with K1 series printers at the moment. If you have experience with creating startup services on the K1 firmware please contact me. I don't own a K1 to test with.
-
-## Installation
-
-### The service daemon is now automatically installed when running the main tool, follow the instructions for [Filament-Sync](https://github.com/HurricanePrint/Filament-Sync)
+Filament Sync Service is a background utility for Creality OS printers. It automatically restores your custom filament profiles and database elements, preventing the printer from overwriting them with factory defaults upon reboot.
 
 ---
 
-### The following instructions are now only needed for manual installation if you have errors with the automatic installation
+### ⚠️ Note for K1 Users
+This service is actively seeking testers for K1 series machines. 
+Please share your feedback or open an issue on GitHub to report your results.
 
-Download and unzip the [Latest Release](https://github.com/HurricanePrint/Filament-Sync-Service/releases/latest)
 
-Open Fluidd in your browser ```<your.printer.ip>:4408```
 
-On the left side select Configuration {...} 
+---
 
-Click the + then Upload Folder
+## 🚀 Installation
 
-Select the Filament-Sync-Service folder you extracted
+> [!NOTE]  
+> Use these instructions for manual installation if the automated install tool encounters errors.
 
-### In Terminal/Powershell on your pc
+### Step 1: Upload via Fluidd Web Interface
+1. Download and extract the [Latest Release](https://github.com/HurricanePrint/Filament-Sync-Service/releases/latest).
+2. Open Fluidd in your web browser: `<your.printer.ip>:4408`.
+3. Select the **Configuration** `{...}` tab from the left sidebar.
+4. Click the **+** icon, then select **Upload Folder**.
+5. Select and upload the extracted `Filament-Sync-Service` folder.
 
-Connect to your printer with ssh ```root@<your.printer.ip>```
-password ```creality_2024```
+### Step 2: Execute the Installer via SSH
+Open your terminal (macOS/Linux) or PowerShell (Windows) and connect to your printer:
 
-Install the sync service
+```bash
+ssh root@<your.printer.ip>
+# Default Password: creality_2024
 ```
+
+Navigate to the uploaded directory and run the installation script matching your hardware model:
+
+```bash
 cd /mnt/UDISK/printer_data/config/Filament-Sync-Service/
 ```
+
+* **For K2 Series Printers:**
+
+  * Install
+  ```bash
+  sh install.sh
+  ```
+
+* **For K1 Series Printers:**
+    * Pull the latest updates
+    ```
+    git pull
+    ```
+    * Switch to the k1-test branch
+    ```bash
+    git checkout k1-test
+    ```
+    * Install
+    ```bash
+    sh install.sh k1
+    ```
+
+### Step 3: Desktop Setup
+Once the printer service is active, finish the setup by installing the companion desktop software:
+👉 **[Filament-Sync (Desktop Application)](https://github.com/HurricanePrint/Filament-Sync)**
+
+---
+
+## 🔄 Updates
+
+### Automatic Updates
+Updates are managed automatically through Moonraker. When a new version is released, an update notification will appear directly inside the Fluidd interface.
+
+### Troubleshooting Update Visibility
+If you performed a manual installation, Fluidd might not track repository updates immediately. To repair tracking:
+1. Open **Fluidd Settings**.
+2. Scroll to the bottom **Software Updates** section.
+3. Click the **Recover** button.
+
+### Manual Git Updates
+Alternatively, fetch the latest changes manually over SSH:
+```bash
+cd /mnt/UDISK/printer_data/config/Filament-Sync-Service/
+git pull
 ```
-sh /install.sh
-```
-
-If you installed manually you may need to repair the repo before Fluidd will show if there are updates
-
-Go into Fluidd Settings, scroll all the way to the bottom **Software Updates** section and click **Recover**
-
-
-#### All done! Continue to install Filament-Sync on your pc
-### [Filament-Sync](https://github.com/HurricanePrint/Filament-Sync)
-
-## Updating
-
-Moonraker now handles checking for and downloading updates. If there is an update there will be a notification in Fluidd.
