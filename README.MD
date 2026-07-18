@@ -7,7 +7,10 @@ Filament Sync Service is a background utility for Creality OS printers. It autom
 ---
 
 ### ⚠️ Note for K1 Users
-This service is actively seeking testers for K1 series machines. Please share your feedback or open an issue on GitHub to report your results.
+This service is actively seeking testers for K1 series machines. 
+Please share your feedback or open an issue on GitHub to report your results.
+
+
 
 ---
 
@@ -38,14 +41,25 @@ cd /mnt/UDISK/printer_data/config/Filament-Sync-Service/
 ```
 
 * **For K2 Series Printers:**
+
+  * Install
   ```bash
   sh install.sh
   ```
 
 * **For K1 Series Printers:**
-  ```bash
-  sh install.sh k1
-  ```
+    * Pull the latest updates
+    ```
+    git pull
+    ```
+    * Switch to the k1-test branch
+    ```bash
+    git checkout k1-test
+    ```
+    * Install
+    ```bash
+    sh install.sh k1
+    ```
 
 ### Step 3: Desktop Setup
 Once the printer service is active, finish the setup by installing the companion desktop software:
