@@ -1,6 +1,16 @@
 #! /bin/sh
 SERVICEDIRECTORY="./service"
 
+if [ "$1" = "k1" ]; then
+    echo "Installing K1 service"
+    cp ${SERVICEDIRECTORY}/filamentsynck1 /etc/init.d/
+    chmod +x /etc/init.d/filamentsynck1
+
+    echo "Enabling and starting service"
+    /etc/init.d/filamentsynck1 enable
+    /etc/init.d/filamentsynck1 start
+    echo "Service is" `/etc/init.d/filamentsynck1 status`
+else
 #stop and remove service if previous version exists
 if test -f "/etc/init.d/filamentsync"; then
     echo "Removing previous version"
@@ -47,3 +57,5 @@ else
 fi
 
 /etc/init.d/moonraker restart
+
+fi
