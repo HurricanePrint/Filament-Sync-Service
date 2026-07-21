@@ -41,25 +41,16 @@ cd /mnt/UDISK/printer_data/config/Filament-Sync-Service/
 ```
 
 * **For K2 Series Printers:**
-
   * Install
   ```bash
   sh install.sh
   ```
 
 * **For K1 Series Printers:**
-    * Pull the latest updates
-    ```
-    git pull
-    ```
-    * Switch to the k1-test branch
-    ```bash
-    git checkout k1-test
-    ```
-    * Install
-    ```bash
-    sh install.sh k1
-    ```
+  * Install
+  ```bash
+  sh install.sh k1
+  ```
 
 ### Step 3: Desktop Setup
 Once the printer service is active, finish the setup by installing the companion desktop software:
@@ -79,7 +70,7 @@ If you performed a manual installation, Fluidd might not track repository update
 3. Click the **Recover** button.
 
 ### Manual Git Updates
-Alternatively, fetch the latest changes manually over SSH:
+Alternatively, fetch the latest changes manually over SSH if git is installed on your printer:
 ```bash
 cd /mnt/UDISK/printer_data/config/Filament-Sync-Service/
 git pull
