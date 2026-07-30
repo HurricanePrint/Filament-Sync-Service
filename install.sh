@@ -1,6 +1,9 @@
 #! /bin/sh
 SERVICEDIRECTORY="./service"
 
+chown -R $USER:$USER /mnt/UDISK/printer_data/config/Filament-Sync-Service
+chmod -R 755 /mnt/UDISK/printer_data/config/Filament-Sync-Service
+
 if [ "$1" = "k1" ]; then
     echo "Installing K1 service"
     cp ${SERVICEDIRECTORY}/filamentsynck1 /etc/init.d/
